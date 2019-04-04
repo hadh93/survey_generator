@@ -1,4 +1,4 @@
-// Generated from C:/Users/dongh/Desktop/COS382 P02 (Goeman, Ha)/src\SurveyGeneratorParser.g4 by ANTLR 4.7.2
+// Generated from C:/Users/dongh/Desktop/LS Proj/COS382 P02 (Goeman, Ha)/src\SurveyGeneratorParser.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -40,9 +40,51 @@ public interface SurveyGeneratorParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitQuestion(SurveyGeneratorParserParser.QuestionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#subquestion}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubquestion(SurveyGeneratorParserParser.SubquestionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#multi}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitMulti(SurveyGeneratorParserParser.MultiContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#single}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingle(SurveyGeneratorParserParser.SingleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#textentry}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextentry(SurveyGeneratorParserParser.TextentryContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#number}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumber(SurveyGeneratorParserParser.NumberContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#date}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDate(SurveyGeneratorParserParser.DateContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#upload}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUpload(SurveyGeneratorParserParser.UploadContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParserParser#scale}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScale(SurveyGeneratorParserParser.ScaleContext ctx);
 }

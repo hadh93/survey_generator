@@ -1,4 +1,4 @@
-// Generated from C:/Users/dongh/Desktop/COS382 P02 (Goeman, Ha)/src\SurveyGeneratorParser.g4 by ANTLR 4.7.2
+// Generated from C:/Users/dongh/Desktop/LS Proj/COS382 P02 (Goeman, Ha)/src\SurveyGeneratorParser.g4 by ANTLR 4.7.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -75,6 +75,18 @@ public class SurveyGeneratorParserBaseListener implements SurveyGeneratorParserL
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSubquestion(SurveyGeneratorParserParser.SubquestionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSubquestion(SurveyGeneratorParserParser.SubquestionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMulti(SurveyGeneratorParserParser.MultiContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -82,6 +94,78 @@ public class SurveyGeneratorParserBaseListener implements SurveyGeneratorParserL
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMulti(SurveyGeneratorParserParser.MultiContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSingle(SurveyGeneratorParserParser.SingleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingle(SurveyGeneratorParserParser.SingleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTextentry(SurveyGeneratorParserParser.TextentryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTextentry(SurveyGeneratorParserParser.TextentryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumber(SurveyGeneratorParserParser.NumberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumber(SurveyGeneratorParserParser.NumberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDate(SurveyGeneratorParserParser.DateContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDate(SurveyGeneratorParserParser.DateContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterUpload(SurveyGeneratorParserParser.UploadContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUpload(SurveyGeneratorParserParser.UploadContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterScale(SurveyGeneratorParserParser.ScaleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitScale(SurveyGeneratorParserParser.ScaleContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -1,4 +1,4 @@
-// Generated from C:/Users/dongh/Desktop/COS382 P02 (Goeman, Ha)/src\SurveyGeneratorParser.g4 by ANTLR 4.7.2
+// Generated from C:/Users/dongh/Desktop/LS Proj/COS382 P02 (Goeman, Ha)/src\SurveyGeneratorParser.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -57,6 +57,16 @@ public interface SurveyGeneratorParserListener extends ParseTreeListener {
 	 */
 	void exitQuestion(SurveyGeneratorParserParser.QuestionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#subquestion}.
+	 * @param ctx the parse tree
+	 */
+	void enterSubquestion(SurveyGeneratorParserParser.SubquestionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParserParser#subquestion}.
+	 * @param ctx the parse tree
+	 */
+	void exitSubquestion(SurveyGeneratorParserParser.SubquestionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#multi}.
 	 * @param ctx the parse tree
 	 */
@@ -66,4 +76,64 @@ public interface SurveyGeneratorParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMulti(SurveyGeneratorParserParser.MultiContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#single}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingle(SurveyGeneratorParserParser.SingleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParserParser#single}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingle(SurveyGeneratorParserParser.SingleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#textentry}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextentry(SurveyGeneratorParserParser.TextentryContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParserParser#textentry}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextentry(SurveyGeneratorParserParser.TextentryContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#number}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumber(SurveyGeneratorParserParser.NumberContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParserParser#number}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumber(SurveyGeneratorParserParser.NumberContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#date}.
+	 * @param ctx the parse tree
+	 */
+	void enterDate(SurveyGeneratorParserParser.DateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParserParser#date}.
+	 * @param ctx the parse tree
+	 */
+	void exitDate(SurveyGeneratorParserParser.DateContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#upload}.
+	 * @param ctx the parse tree
+	 */
+	void enterUpload(SurveyGeneratorParserParser.UploadContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParserParser#upload}.
+	 * @param ctx the parse tree
+	 */
+	void exitUpload(SurveyGeneratorParserParser.UploadContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParserParser#scale}.
+	 * @param ctx the parse tree
+	 */
+	void enterScale(SurveyGeneratorParserParser.ScaleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParserParser#scale}.
+	 * @param ctx the parse tree
+	 */
+	void exitScale(SurveyGeneratorParserParser.ScaleContext ctx);
 }
