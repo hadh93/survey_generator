@@ -1,0 +1,28 @@
+!"titleofsurvey"
+~"optionalpagetitle"
+?"question1title"
+multi["multipleoption1","multipleoption2","multipleoption3"]
+>"multipleoption1"
+	?"nestedquestiontitle"
+	textentry[50]
+
+?"questiontitle2"
+single["singleoption1","singleoption2"]
+>"singleoption1"
+	?"nestedquestion2title"
+	date[]
+
+?"qustiontitle3"
+multi["multipleoption1","multipleoption2"]
+
+?"questiontitle4"
+number[]
+
+?"questiontitle5"
+number[80|100]
+
+?"questiontitle6"
+upload[500|"image"]
+
+?"questiontitle7"
+scale["highly dissatisfied"|"highly satisfied"]
