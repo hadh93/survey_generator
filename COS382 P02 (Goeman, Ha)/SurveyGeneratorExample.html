@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Survey Generator Example</title>
+    <style type="text/css">
+    .likert ul
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .likert li
+    {
+        float: left;
+        text-align: left;
+        list-style-type: none;
+    }
+    </style>
+</head>
+<body>
+
+<h1>(Optional) Survey Title</h1>
+<br>
+<h2>(Optional)Page Title.</h2>
+<br>
+<h3>Question Title: A Sample Question: Type 'Multi'</h3>
+<form action="/action_page.php">
+  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+  <input type="checkbox" name="vehicle3" value="Boat" checked> I have a boat<br><br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+<h3>Question Title: A Sample Question: Type 'Single'</h3>
+<form action="/action_page.php">
+  <input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br>
+</form>
+<br>
+<h3>Question Title: A Sample Question: Type 'TextEntry'</h3>
+<input type="text" class="form-control text-info" id="inputText">
+<br>
+<br>
+<h3>Question Title: A Sample Question: Type 'Number'</h3>
+<form action="/action_page.php">
+  Quantity (Min: 1, Max: 5): <input type="number" name="quantity" min="1" max="5">
+</form>
+<br>
+<h3>Question Title: A Sample Question: Type 'Date'</h3>
+<form action="/action_page.php">
+  Birthday: <input type="date" name="bday">
+</form>
+<br>
+<h3>Question Title: A Sample Question: Type 'Upload'</h3>
+<p>File type: jpg</p>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<input type="file" name="fileToUpload" id="fileToUpload">
+<input type="submit" value="Upload Image" name="submit">
+</form>
+<br>
+<h3>Question Title: A Sample Question: Type 'Scale'</h3>
+<form>
+    <ul class="likert">
+        <li class="likert"> Highly Dissatisfied <input id="radGuiltyStart" type="radio" name="Guilty" value="1" />
+        <li class="likert"><input type="radio" name="Guilty" value="2" />
+        <li class="likert"><input type="radio" name="Guilty" value="3" />
+        <li class="likert"><input type="radio" name="Guilty" value="4" />
+        <li class="likert"><input id="radGuiltyEnd" type="radio" name="Guilty" value="5" /> Highly Satisfied
+    </ul>
+</form>
+<br>
+</body>
+</html>
