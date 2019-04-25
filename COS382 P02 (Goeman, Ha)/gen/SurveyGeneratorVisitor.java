@@ -88,11 +88,29 @@ public interface SurveyGeneratorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTextentry(SurveyGeneratorParser.TextentryContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#maxlength}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMaxlength(SurveyGeneratorParser.MaxlengthContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link SurveyGeneratorParser#number}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitNumber(SurveyGeneratorParser.NumberContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#minimum}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMinimum(SurveyGeneratorParser.MinimumContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#maximum}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMaximum(SurveyGeneratorParser.MaximumContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SurveyGeneratorParser#date}.
 	 * @param ctx the parse tree
@@ -111,4 +129,16 @@ public interface SurveyGeneratorVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitScale(SurveyGeneratorParser.ScaleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#minlabel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMinlabel(SurveyGeneratorParser.MinlabelContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#maxlabel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMaxlabel(SurveyGeneratorParser.MaxlabelContext ctx);
 }

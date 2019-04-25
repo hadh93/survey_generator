@@ -17,8 +17,80 @@
         text-align: left;
         list-style-type: none;
     }
+
+    .hidden {
+        visibility: hidden;
+    }
     </style>
 </head>
-<body><h1>titleofsurvey</h1><br><h2>optionalpagetitle</h2><br><h3>question1title</h3><br><form><input type="checkbox">multipleoption1<br><input type="checkbox">multipleoption2<br><input type="checkbox">multipleoption3<br></form><br>
+<body>
+<h1>titleofsurvey
+</h1>
+<br>
+<h2>
+optionalpagetitle
+</h2>
+<br>
+<h3>
+question1title
+</h3>
+<br>
+<form>
+<input type="checkbox" id ="multipleoption1">multipleoption1<br>
+<input type="checkbox" id ="multipleoption2">multipleoption2<br>
+<input type="checkbox" id ="multipleoption3">multipleoption3<br>
+<form>
+<input type="text" class="form-control text-info" id="question1title" maxlength = "50"></form>
+</form>
+<h3>
+questiontitle2
+</h3>
+<br>
+<form>
+<input type="radio" name ="questiontitle2" id ="singleoption1">singleoption1<br>
+<input type="radio" name ="questiontitle2" id ="singleoption2">singleoption2<br>
+<form><input type="date" name="questiontitle2"></form></form>
+<h3>
+qustiontitle3
+</h3>
+<br>
+<form>
+<input type="checkbox" id ="multipleoption1">multipleoption1<br>
+<input type="checkbox" id ="multipleoption2">multipleoption2<br>
+</form>
+<h3>
+questiontitle4
+</h3>
+<br>
+<form>(Min: -2147483648, Max: 2147483647) <input type="number" name="questiontitle4" min=-2147483648 max=2147483647></form><h3>
+questiontitle5
+</h3>
+<br>
+<form>(Min: 80, Max: 100) <input type="number" name="questiontitle5" min=80 max=100></form><h3>
+questiontitle6
+</h3>
+<br>
+<form>
+<input type="file" name="questiontitle6">
+</form>
+<h3>
+questiontitle7
+</h3>
+<br>
+<form>
+	<ul class = "likert">
+		 <li class = "likert"> highly dissatisfied<input id="radquestiontitle7Start" type="radio" name="questiontitle7" value="1" />
+		 <li class = "likert"><input type="radio" name="questiontitle7" value="2" />
+		 <li class = "likert"><input type="radio" name="questiontitle7" value="3" />
+		 <li class = "likert"><input type="radio" name="questiontitle7" value="4" />
+		 <li class = "likert"><input id="radquestiontitle7End" type="radio" name="questiontitle7" value="5" />highly satisfied
+	</ul>
+</form>
+<br>
+<h3>
+questiontitle8
+</h3>
+<br>
+<form><input type="date" name="questiontitle8"></form><br>
 </body>
 </html>

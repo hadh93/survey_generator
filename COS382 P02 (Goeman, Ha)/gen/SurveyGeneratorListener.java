@@ -137,6 +137,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 */
 	void exitTextentry(SurveyGeneratorParser.TextentryContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#maxlength}.
+	 * @param ctx the parse tree
+	 */
+	void enterMaxlength(SurveyGeneratorParser.MaxlengthContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#maxlength}.
+	 * @param ctx the parse tree
+	 */
+	void exitMaxlength(SurveyGeneratorParser.MaxlengthContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#number}.
 	 * @param ctx the parse tree
 	 */
@@ -146,6 +156,26 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNumber(SurveyGeneratorParser.NumberContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#minimum}.
+	 * @param ctx the parse tree
+	 */
+	void enterMinimum(SurveyGeneratorParser.MinimumContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#minimum}.
+	 * @param ctx the parse tree
+	 */
+	void exitMinimum(SurveyGeneratorParser.MinimumContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#maximum}.
+	 * @param ctx the parse tree
+	 */
+	void enterMaximum(SurveyGeneratorParser.MaximumContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#maximum}.
+	 * @param ctx the parse tree
+	 */
+	void exitMaximum(SurveyGeneratorParser.MaximumContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#date}.
 	 * @param ctx the parse tree
@@ -176,4 +206,24 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitScale(SurveyGeneratorParser.ScaleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#minlabel}.
+	 * @param ctx the parse tree
+	 */
+	void enterMinlabel(SurveyGeneratorParser.MinlabelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#minlabel}.
+	 * @param ctx the parse tree
+	 */
+	void exitMinlabel(SurveyGeneratorParser.MinlabelContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#maxlabel}.
+	 * @param ctx the parse tree
+	 */
+	void enterMaxlabel(SurveyGeneratorParser.MaxlabelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#maxlabel}.
+	 * @param ctx the parse tree
+	 */
+	void exitMaxlabel(SurveyGeneratorParser.MaxlabelContext ctx);
 }

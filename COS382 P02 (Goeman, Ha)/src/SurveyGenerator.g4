@@ -1,6 +1,6 @@
 grammar SurveyGenerator;
 
-s   : ('!' title (NL)*) page+ ;
+s   : ('!' title (NL)*) page+ EOF;
 title : TEXT;
 page : ('~' pagetitle (NL)*) question+;
 pagetitle : TEXT;
@@ -12,14 +12,19 @@ multi : 'multi' ('%')? '[' multiplechoiceoption (','multiplechoiceoption)+ ']' N
 multiplechoiceoption : TEXT;
 single : 'single' ('%')? '[' singlechoiceoption (','singlechoiceoption)+ ']' NL ('>' TEXT NL (subquestion)+ )?; // optional dependency
 singlechoiceoption : TEXT;
-textentry : 'textentry[' INTEGER ']' NL; // e.g. essay questions
-number : 'number[' (INTEGER'|'INTEGER)? ']' NL; // optional min/max value
+textentry : 'textentry[' maxlength ']' NL; // e.g. essay questions
+maxlength : INTEGER;
+number : 'number[' (minimum'|'maximum)? ']' NL; // optional min/max value
+minimum : INTEGER;
+maximum : INTEGER;
 date : 'date[]' NL; // date method needs to be implemented when translating
 upload : 'upload['( INTEGER | TEXT | INTEGER'|'TEXT )? ']' NL; // integer: file size, text: file type -> also needs to be implemented when translating
-scale : 'scale[' TEXT '|' TEXT ']' NL; // text tokens example : highly dissatisfied / highly satisfied
+scale : 'scale[' minlabel '|' maxlabel ']' NL; // text tokens example : highly dissatisfied / highly satisfied
+minlabel : TEXT;
+maxlabel : TEXT;
 
-NL : '\n' | '\r' ;
-TEXT    : '"' [ 0-9a-zA-Z!@#$%^&*():;'"_]+ '"';
+NL : ('\r')? '\n' ;
+TEXT    : '"' [ 0-9a-zA-Z!@#$%^&*():;'_]+ '"';
 INTEGER : ('-')?[1-9](NUMBER)* | '0';
 
 NUMBER   : [0-9] ;

@@ -171,6 +171,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMaxlength(SurveyGeneratorParser.MaxlengthContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMaxlength(SurveyGeneratorParser.MaxlengthContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterNumber(SurveyGeneratorParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -178,6 +190,30 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNumber(SurveyGeneratorParser.NumberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMinimum(SurveyGeneratorParser.MinimumContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMinimum(SurveyGeneratorParser.MinimumContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMaximum(SurveyGeneratorParser.MaximumContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMaximum(SurveyGeneratorParser.MaximumContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -214,6 +250,30 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitScale(SurveyGeneratorParser.ScaleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMinlabel(SurveyGeneratorParser.MinlabelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMinlabel(SurveyGeneratorParser.MinlabelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMaxlabel(SurveyGeneratorParser.MaxlabelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMaxlabel(SurveyGeneratorParser.MaxlabelContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

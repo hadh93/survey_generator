@@ -11,6 +11,9 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	public SurveyTranslator() {
 		stringbuilder = new StringBuilder();
 	}
+	private String qname;
+	private int min, max;
+	private String minlabel, maxlabel;
 
 	private String dequote(String somestring){
 		return somestring.substring(1,somestring.length()-1);
@@ -36,7 +39,10 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 				"        float: left;\n" +
 				"        text-align: left;\n" +
 				"        list-style-type: none;\n" +
-				"    }\n" +
+				"    }\n\n" +
+				"    .hidden {\n" +
+				"        visibility: hidden;\n" +
+				"    }\n"+
 				"    </style>\n" +
 				"</head>\n" +
 				"<body>");
@@ -51,10 +57,11 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterTitle(SurveyGeneratorParser.TitleContext ctx) {
-		stringbuilder.append("<h1>" +
+		stringbuilder.append("\n<h1>" +
 				dequote(ctx.getText()) +
-				"</h1>" +
-				"<br>");
+				"\n" +
+				"</h1>\n" +
+				"<br>\n");
 	}
 
 	@Override
@@ -74,10 +81,11 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterPagetitle(SurveyGeneratorParser.PagetitleContext ctx) {
-		stringbuilder.append("<h2>" +
+		stringbuilder.append("<h2>\n" +
 				dequote(ctx.getText()) +
-				"</h2>" +
-				"<br>");
+				"\n" +
+				"</h2>\n" +
+				"<br>\n");
 	}
 
 	@Override
@@ -107,10 +115,12 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterQuestiontitle(SurveyGeneratorParser.QuestiontitleContext ctx) {
-		stringbuilder.append("<h3>" +
+		qname = ctx.getText();
+		stringbuilder.append("<h3>\n" +
 				dequote(ctx.getText()) +
-				"</h3>" +
-				"<br>");
+				"\n"+
+				"</h3>\n" +
+				"<br>\n");
 	}
 
 	@Override
@@ -130,20 +140,21 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterMulti(SurveyGeneratorParser.MultiContext ctx) {
-		stringbuilder.append("<form>");
+		stringbuilder.append("<form>\n");
 
 	}
 
 	@Override
 	public void exitMulti(SurveyGeneratorParser.MultiContext ctx) {
-		stringbuilder.append("</form>");
+		stringbuilder.append("</form>\n");
 	}
 
 	@Override
 	public void enterMultiplechoiceoption(SurveyGeneratorParser.MultiplechoiceoptionContext ctx) {
-		stringbuilder.append("<input type=\"checkbox\">" +
+		stringbuilder.append("<input type=\"checkbox\" id =" +
+				ctx.getText() + ">" +
 				dequote(ctx.getText()) +
-				"<br>");
+				"<br>\n");
 	}
 
 	@Override
@@ -153,20 +164,24 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterSingle(SurveyGeneratorParser.SingleContext ctx) {
-		stringbuilder.append("<form>");
-		System.out.println("do we ever reach here?");
+		stringbuilder.append("<form>\n");
 	}
 
 	@Override
 	public void exitSingle(SurveyGeneratorParser.SingleContext ctx) {
-		stringbuilder.append("</form>");
+		stringbuilder.append("</form>\n");
 	}
 
 	@Override
 	public void enterSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx) {
-		stringbuilder.append("<input type=\"radio\">" +
+
+		stringbuilder.append("<input type=\"radio\"" +
+				" name =" +
+				qname +
+				" id =" +
+				ctx.getText() + ">" +
 				dequote(ctx.getText()) +
-				"<br>");
+				"<br>\n");
 	}
 
 	@Override
@@ -176,26 +191,74 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterTextentry(SurveyGeneratorParser.TextentryContext ctx) {
-
+		stringbuilder.append("<form>\n");
+		stringbuilder.append("<input type=\"text\" class=\"form-control text-info\" id=" +
+				qname +
+				" "
+		);
 	}
 
 	@Override
 	public void exitTextentry(SurveyGeneratorParser.TextentryContext ctx) {
+		stringbuilder.append(">");
+		stringbuilder.append("</form>\n");
+	}
+
+	@Override
+	public void enterMaxlength(SurveyGeneratorParser.MaxlengthContext ctx) {
+
+		stringbuilder.append("maxlength = \""+
+				ctx.getText()+
+				"\""
+				);
+
+	}
+
+	@Override
+	public void exitMaxlength(SurveyGeneratorParser.MaxlengthContext ctx) {
 
 	}
 
 	@Override
 	public void enterNumber(SurveyGeneratorParser.NumberContext ctx) {
 
+		//<form>Quantity (Min: 1, Max: 5): <input type="number" name="quantity" min="1" max="5">
+		//</form>
+	min = 1 << 31;
+	max = ((1 << 31) >> 31) ^ min;
 	}
 
 	@Override
 	public void exitNumber(SurveyGeneratorParser.NumberContext ctx) {
+		stringbuilder.append("<form>" +
+			"(Min: " +	min + ", Max: " + max + ") <input type=\"number\" name=\"" + dequote(qname) + "\" min=" + min + " max=" + max +
+			"></form>");
+	}
+
+	@Override
+	public void enterMinimum(SurveyGeneratorParser.MinimumContext ctx) {
+		min = Integer.parseInt(ctx.getText());
+	}
+
+	@Override
+	public void exitMinimum(SurveyGeneratorParser.MinimumContext ctx) {
+
+	}
+
+	@Override
+	public void enterMaximum(SurveyGeneratorParser.MaximumContext ctx) {
+	max = Integer.parseInt(ctx.getText());
+	}
+
+	@Override
+	public void exitMaximum(SurveyGeneratorParser.MaximumContext ctx) {
 
 	}
 
 	@Override
 	public void enterDate(SurveyGeneratorParser.DateContext ctx) {
+		stringbuilder.append("<form>" +
+				"<input type=\"date\" name=\"" + dequote(qname) + "\"></form>");
 
 	}
 
@@ -206,7 +269,11 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterUpload(SurveyGeneratorParser.UploadContext ctx) {
-
+		stringbuilder.append("<form>\n" +
+				"<input type=\"file\" name=\"" + dequote(qname) + "\">\n"+
+		"</form>\n");
+		//<input type="file" name="fileToUpload" id="fileToUpload">
+		//<input type="submit" value="Upload Image" name="submit">
 	}
 
 	@Override
@@ -221,6 +288,44 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void exitScale(SurveyGeneratorParser.ScaleContext ctx) {
+		stringbuilder.append("<form>\n" +
+				"\t<ul class = \"likert\">\n" +
+				"\t\t <li class = \"likert\"> " + dequote(minlabel) +
+						"<input id=\"rad" + dequote(qname) + "Start\" type=\"radio\" name=\""+dequote(qname)+"\" value=\"1\" />\n"+
+				"\t\t <li class = \"likert\"><input type=\"radio\" name=\""+dequote(qname) +"\" value=\"2\" />\n"+
+				"\t\t <li class = \"likert\"><input type=\"radio\" name=\""+dequote(qname) +"\" value=\"3\" />\n"+
+				"\t\t <li class = \"likert\"><input type=\"radio\" name=\""+dequote(qname) +"\" value=\"4\" />\n"+
+				"\t\t <li class = \"likert\"><input id=\"rad" + dequote(qname) + "End\" type=\"radio\" name=\""+dequote(qname)+"\" value=\"5\" />"+ dequote(maxlabel) + "\n"+
+				"\t</ul>\n</form>\n<br>\n");
+		//<form>
+		//    <ul class="likert">
+		//        <li class="likert"> Highly Dissatisfied <input id="radGuiltyStart" type="radio" name="Guilty" value="1" />
+		//        <li class="likert"><input type="radio" name="Guilty" value="2" />
+		//        <li class="likert"><input type="radio" name="Guilty" value="3" />
+		//        <li class="likert"><input type="radio" name="Guilty" value="4" />
+		//        <li class="likert"><input id="radGuiltyEnd" type="radio" name="Guilty" value="5" /> Highly Satisfied
+		//    </ul>
+		//</form>
+
+	}
+
+	@Override
+	public void enterMinlabel(SurveyGeneratorParser.MinlabelContext ctx) {
+		minlabel = ctx.getText();
+	}
+
+	@Override
+	public void exitMinlabel(SurveyGeneratorParser.MinlabelContext ctx) {
+
+	}
+
+	@Override
+	public void enterMaxlabel(SurveyGeneratorParser.MaxlabelContext ctx) {
+		maxlabel = ctx.getText();
+	}
+
+	@Override
+	public void exitMaxlabel(SurveyGeneratorParser.MaxlabelContext ctx) {
 
 	}
 

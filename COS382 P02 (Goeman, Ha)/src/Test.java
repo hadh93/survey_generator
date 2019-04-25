@@ -18,16 +18,16 @@ public class Test {
         ParseTreeWalker walker = new ParseTreeWalker();
         SurveyTranslator listener = new SurveyTranslator();
         walker.walk(listener, context);
-        parser.s();
+        //parser.s();
 
-//        try {
-//            BufferedWriter writer = null;
-//			writer = new BufferedWriter(new FileWriter(args[0].substring(0,args[0].length()-3)+"html"));
-//			writer.write(listener.stringbuilder.toString());
-//            writer.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            BufferedWriter writer = null;
+			writer = new BufferedWriter(new FileWriter(args[0].substring(0,args[0].length()-3)+"html"));
+			writer.write(listener.stringbuilder.toString());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("Reached the end!");
-    };
+    }
 }
