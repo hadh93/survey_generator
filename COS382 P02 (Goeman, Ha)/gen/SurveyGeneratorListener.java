@@ -1,4 +1,4 @@
-// Generated from C:/Users/dongh/Desktop/LS Proj/COS382 P02 (Goeman, Ha)/src\SurveyGenerator.g4 by ANTLR 4.7.2
+// Generated from C:/Users/dongh/Desktop/Spring 2019/LS Proj/COS382 P02 (Goeman, Ha)/src\SurveyGenerator.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -37,6 +37,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 */
 	void exitPage(SurveyGeneratorParser.PageContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#pagetitle}.
+	 * @param ctx the parse tree
+	 */
+	void enterPagetitle(SurveyGeneratorParser.PagetitleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#pagetitle}.
+	 * @param ctx the parse tree
+	 */
+	void exitPagetitle(SurveyGeneratorParser.PagetitleContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#qtype}.
 	 * @param ctx the parse tree
 	 */
@@ -56,6 +66,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitQuestion(SurveyGeneratorParser.QuestionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#questiontitle}.
+	 * @param ctx the parse tree
+	 */
+	void enterQuestiontitle(SurveyGeneratorParser.QuestiontitleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#questiontitle}.
+	 * @param ctx the parse tree
+	 */
+	void exitQuestiontitle(SurveyGeneratorParser.QuestiontitleContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#subquestion}.
 	 * @param ctx the parse tree
@@ -77,6 +97,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 */
 	void exitMulti(SurveyGeneratorParser.MultiContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#multiplechoiceoption}.
+	 * @param ctx the parse tree
+	 */
+	void enterMultiplechoiceoption(SurveyGeneratorParser.MultiplechoiceoptionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#multiplechoiceoption}.
+	 * @param ctx the parse tree
+	 */
+	void exitMultiplechoiceoption(SurveyGeneratorParser.MultiplechoiceoptionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#single}.
 	 * @param ctx the parse tree
 	 */
@@ -86,6 +116,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSingle(SurveyGeneratorParser.SingleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#singlechoiceoption}.
+	 * @param ctx the parse tree
+	 */
+	void enterSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#singlechoiceoption}.
+	 * @param ctx the parse tree
+	 */
+	void exitSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#textentry}.
 	 * @param ctx the parse tree

@@ -1,4 +1,4 @@
-// Generated from C:/Users/dongh/Desktop/LS Proj/COS382 P02 (Goeman, Ha)/src\SurveyGenerator.g4 by ANTLR 4.7.2
+// Generated from C:/Users/dongh/Desktop/Spring 2019/LS Proj/COS382 P02 (Goeman, Ha)/src\SurveyGenerator.g4 by ANTLR 4.7.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -51,6 +51,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPagetitle(SurveyGeneratorParser.PagetitleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPagetitle(SurveyGeneratorParser.PagetitleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterQtype(SurveyGeneratorParser.QtypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -70,6 +82,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitQuestion(SurveyGeneratorParser.QuestionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterQuestiontitle(SurveyGeneratorParser.QuestiontitleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitQuestiontitle(SurveyGeneratorParser.QuestiontitleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -99,6 +123,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMultiplechoiceoption(SurveyGeneratorParser.MultiplechoiceoptionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMultiplechoiceoption(SurveyGeneratorParser.MultiplechoiceoptionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSingle(SurveyGeneratorParser.SingleContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -106,6 +142,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSingle(SurveyGeneratorParser.SingleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
