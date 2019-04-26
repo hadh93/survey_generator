@@ -31,7 +31,7 @@
 optionalpagetitle
 </h2>
 <br>
-<h3>
+<div><h3>
 question1title
 </h3>
 <br>
@@ -39,41 +39,51 @@ question1title
 <input type="checkbox" id ="multipleoption1">multipleoption1<br>
 <input type="checkbox" id ="multipleoption2">multipleoption2<br>
 <input type="checkbox" id ="multipleoption3">multipleoption3<br>
+<div class = "hidden" name = "multipleoption1" style="margin-left: 100px
+"><h3>
+nestedquestiontitle
+</h3>
+<br>
 <form>
-<input type="text" class="form-control text-info" id="question1title" maxlength = "50"></form>
-</form>
-<h3>
+<input type="text" class="form-control text-info" id="nestedquestiontitle" maxlength = "50"></form>
+</div></form>
+</div><div><h3>
 questiontitle2
 </h3>
 <br>
 <form>
 <input type="radio" name ="questiontitle2" id ="singleoption1">singleoption1<br>
 <input type="radio" name ="questiontitle2" id ="singleoption2">singleoption2<br>
-<form><input type="date" name="questiontitle2"></form></form>
-<h3>
+<div class = "hidden" name = "singleoption1" style="margin-left: 100px
+"><h3>
+nestedquestion2title
+</h3>
+<br>
+<form><input type="date" name="nestedquestion2title"></form></div></form>
+</div><div><h3>
 qustiontitle3
 </h3>
 <br>
 <form>
-<input type="checkbox" id ="multipleoption1">multipleoption1<br>
-<input type="checkbox" id ="multipleoption2">multipleoption2<br>
+<input type="checkbox" id ="multipleoption11">multipleoption11<br>
+<input type="checkbox" id ="multipleoption12">multipleoption12<br>
 </form>
-<h3>
+</div><div><h3>
 questiontitle4
 </h3>
 <br>
-<form>(Min: -2147483648, Max: 2147483647) <input type="number" name="questiontitle4" min=-2147483648 max=2147483647></form><h3>
+<form>(Min: -2147483648, Max: 2147483647) <input type="number" name="questiontitle4" min=-2147483648 max=2147483647></form></div><div><h3>
 questiontitle5
 </h3>
 <br>
-<form>(Min: 80, Max: 100) <input type="number" name="questiontitle5" min=80 max=100></form><h3>
+<form>(Min: 80, Max: 100) <input type="number" name="questiontitle5" min=80 max=100></form></div><div><h3>
 questiontitle6
 </h3>
 <br>
 <form>
 <input type="file" name="questiontitle6">
 </form>
-<h3>
+</div><div><h3>
 questiontitle7
 </h3>
 <br>
@@ -87,10 +97,34 @@ questiontitle7
 	</ul>
 </form>
 <br>
-<h3>
+</div><div><h3>
 questiontitle8
 </h3>
 <br>
-<form><input type="date" name="questiontitle8"></form><br>
+<form><input type="date" name="questiontitle8"></form></div><br>
+<script>
+
+var multipleoption1 = document.querySelector("input[id=multipleoption1]");
+
+multipleoption1.addEventListener( 'change', function() {
+    if(!this.checked) {
+        document.getElementsByName("multipleoption1")[0].classList.add("hidden");	
+    } else {
+       document.getElementsByName("multipleoption1")[0].classList.remove("hidden");
+    }
+});
+
+
+var singleoption1 = document.querySelector("input[id=singleoption1]");
+
+singleoption1.addEventListener( 'change', function() {
+    if(!this.checked) {
+        document.getElementsByName("singleoption1")[0].classList.add("hidden");	
+    } else {
+       document.getElementsByName("singleoption1")[0].classList.remove("hidden");
+    }
+});
+</script>
+
 </body>
 </html>

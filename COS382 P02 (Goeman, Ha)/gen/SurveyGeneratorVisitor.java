@@ -70,17 +70,35 @@ public interface SurveyGeneratorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMultiplechoiceoption(SurveyGeneratorParser.MultiplechoiceoptionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#nestedchoice}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNestedchoice(SurveyGeneratorParser.NestedchoiceContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link SurveyGeneratorParser#single}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSingle(SurveyGeneratorParser.SingleContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#randomizer}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRandomizer(SurveyGeneratorParser.RandomizerContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link SurveyGeneratorParser#singlechoiceoption}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SurveyGeneratorParser#nestedchoice2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNestedchoice2(SurveyGeneratorParser.Nestedchoice2Context ctx);
 	/**
 	 * Visit a parse tree produced by {@link SurveyGeneratorParser#textentry}.
 	 * @param ctx the parse tree

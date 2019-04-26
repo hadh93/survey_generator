@@ -11,9 +11,12 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	public SurveyTranslator() {
 		stringbuilder = new StringBuilder();
 	}
+	private StringBuilder javascriptcode = new StringBuilder();
 	private String qname;
 	private int min, max;
 	private String minlabel, maxlabel;
+	private String nestedchoice;
+	private boolean isRandom;
 
 	private String dequote(String somestring){
 		return somestring.substring(1,somestring.length()-1);
@@ -51,6 +54,10 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	@Override
 	public void exitS(SurveyGeneratorParser.SContext ctx) {
 		stringbuilder.append("<br>\n" +
+				"<script>" +
+				javascriptcode+
+				"</script>\n" +
+						"\n" +
 				"</body>\n" +
 				"</html>");
 	}
@@ -105,17 +112,18 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterQuestion(SurveyGeneratorParser.QuestionContext ctx) {
-
+		stringbuilder.append("<div>");
 	}
 
 	@Override
 	public void exitQuestion(SurveyGeneratorParser.QuestionContext ctx) {
-
+		stringbuilder.append("</div>");
 	}
 
 	@Override
 	public void enterQuestiontitle(SurveyGeneratorParser.QuestiontitleContext ctx) {
 		qname = ctx.getText();
+
 		stringbuilder.append("<h3>\n" +
 				dequote(ctx.getText()) +
 				"\n"+
@@ -130,12 +138,23 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterSubquestion(SurveyGeneratorParser.SubquestionContext ctx) {
-
+		stringbuilder.append("<div class = \"hidden\" name = \""+ nestedchoice +"\" style=\"margin-left: 100px\n\">");
+		javascriptcode.append("\n\nvar " +
+				nestedchoice +
+				" = document.querySelector(\"input[id=" + nestedchoice + "]\");\n" +
+				"\n" +
+				nestedchoice+".addEventListener( 'change', function() {\n" +
+				"    if(!this.checked) {\n" +
+				"        document.getElementsByName(\""+ nestedchoice +"\")[0].classList.add(\"hidden\");	\n"+
+				"    } else {\n" +
+				"       document.getElementsByName(\""+ nestedchoice +"\")[0].classList.remove(\"hidden\");\n" +
+				"    }\n" +
+				"});\n");
 	}
 
 	@Override
 	public void exitSubquestion(SurveyGeneratorParser.SubquestionContext ctx) {
-
+		stringbuilder.append("</div>");
 	}
 
 	@Override
@@ -163,6 +182,16 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	}
 
 	@Override
+	public void enterNestedchoice(SurveyGeneratorParser.NestedchoiceContext ctx) {
+		nestedchoice = dequote(ctx.getText());
+	}
+
+	@Override
+	public void exitNestedchoice(SurveyGeneratorParser.NestedchoiceContext ctx) {
+
+	}
+
+	@Override
 	public void enterSingle(SurveyGeneratorParser.SingleContext ctx) {
 		stringbuilder.append("<form>\n");
 	}
@@ -170,6 +199,16 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	@Override
 	public void exitSingle(SurveyGeneratorParser.SingleContext ctx) {
 		stringbuilder.append("</form>\n");
+	}
+
+	@Override
+	public void enterRandomizer(SurveyGeneratorParser.RandomizerContext ctx) {
+		isRandom = true;
+	}
+
+	@Override
+	public void exitRandomizer(SurveyGeneratorParser.RandomizerContext ctx) {
+
 	}
 
 	@Override
@@ -186,6 +225,16 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void exitSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx) {
+
+	}
+
+	@Override
+	public void enterNestedchoice2(SurveyGeneratorParser.Nestedchoice2Context ctx) {
+		nestedchoice = dequote(ctx.getText());
+	}
+
+	@Override
+	public void exitNestedchoice2(SurveyGeneratorParser.Nestedchoice2Context ctx) {
 
 	}
 
@@ -272,8 +321,6 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 		stringbuilder.append("<form>\n" +
 				"<input type=\"file\" name=\"" + dequote(qname) + "\">\n"+
 		"</form>\n");
-		//<input type="file" name="fileToUpload" id="fileToUpload">
-		//<input type="submit" value="Upload Image" name="submit">
 	}
 
 	@Override
@@ -297,15 +344,6 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 				"\t\t <li class = \"likert\"><input type=\"radio\" name=\""+dequote(qname) +"\" value=\"4\" />\n"+
 				"\t\t <li class = \"likert\"><input id=\"rad" + dequote(qname) + "End\" type=\"radio\" name=\""+dequote(qname)+"\" value=\"5\" />"+ dequote(maxlabel) + "\n"+
 				"\t</ul>\n</form>\n<br>\n");
-		//<form>
-		//    <ul class="likert">
-		//        <li class="likert"> Highly Dissatisfied <input id="radGuiltyStart" type="radio" name="Guilty" value="1" />
-		//        <li class="likert"><input type="radio" name="Guilty" value="2" />
-		//        <li class="likert"><input type="radio" name="Guilty" value="3" />
-		//        <li class="likert"><input type="radio" name="Guilty" value="4" />
-		//        <li class="likert"><input id="radGuiltyEnd" type="radio" name="Guilty" value="5" /> Highly Satisfied
-		//    </ul>
-		//</form>
 
 	}
 

@@ -7,11 +7,14 @@ pagetitle : TEXT;
 qtype : multi | single | textentry | number | date | upload | scale ;
 question : '?' questiontitle (NL)+ qtype (NL)*;
 questiontitle : TEXT;
-subquestion : '\t?' TEXT (NL '\t')+ qtype (NL)+;
-multi : 'multi' ('%')? '[' multiplechoiceoption (','multiplechoiceoption)+ ']' NL ('>' TEXT NL (subquestion)+ )?; // optional dependency
+subquestion : '\t?' questiontitle (NL '\t')+ qtype (NL)+;
+multi : 'multi' ('%')? '[' multiplechoiceoption (','multiplechoiceoption)+ ']' NL ('>' nestedchoice NL (subquestion)+ )?; // optional dependency
 multiplechoiceoption : TEXT;
-single : 'single' ('%')? '[' singlechoiceoption (','singlechoiceoption)+ ']' NL ('>' TEXT NL (subquestion)+ )?; // optional dependency
+nestedchoice : TEXT;
+single : 'single' (randomizer)? '[' singlechoiceoption (','singlechoiceoption)+ ']' NL ('>' nestedchoice2 NL (subquestion)+ )?; // optional dependency
+randomizer : RANDOMIZER;
 singlechoiceoption : TEXT;
+nestedchoice2 : TEXT;
 textentry : 'textentry[' maxlength ']' NL; // e.g. essay questions
 maxlength : INTEGER;
 number : 'number[' (minimum'|'maximum)? ']' NL; // optional min/max value
@@ -26,6 +29,7 @@ maxlabel : TEXT;
 NL : ('\r')? '\n' ;
 TEXT    : '"' [ 0-9a-zA-Z!@#$%^&*():;'_]+ '"';
 INTEGER : ('-')?[1-9](NUMBER)* | '0';
+RANDOMIZER : '%';
 
 NUMBER   : [0-9] ;
 WS      : [ ] -> skip ;

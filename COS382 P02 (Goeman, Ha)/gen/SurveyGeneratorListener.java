@@ -107,6 +107,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 */
 	void exitMultiplechoiceoption(SurveyGeneratorParser.MultiplechoiceoptionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#nestedchoice}.
+	 * @param ctx the parse tree
+	 */
+	void enterNestedchoice(SurveyGeneratorParser.NestedchoiceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#nestedchoice}.
+	 * @param ctx the parse tree
+	 */
+	void exitNestedchoice(SurveyGeneratorParser.NestedchoiceContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#single}.
 	 * @param ctx the parse tree
 	 */
@@ -117,6 +127,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 */
 	void exitSingle(SurveyGeneratorParser.SingleContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#randomizer}.
+	 * @param ctx the parse tree
+	 */
+	void enterRandomizer(SurveyGeneratorParser.RandomizerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#randomizer}.
+	 * @param ctx the parse tree
+	 */
+	void exitRandomizer(SurveyGeneratorParser.RandomizerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#singlechoiceoption}.
 	 * @param ctx the parse tree
 	 */
@@ -126,6 +146,16 @@ public interface SurveyGeneratorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SurveyGeneratorParser#nestedchoice2}.
+	 * @param ctx the parse tree
+	 */
+	void enterNestedchoice2(SurveyGeneratorParser.Nestedchoice2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link SurveyGeneratorParser#nestedchoice2}.
+	 * @param ctx the parse tree
+	 */
+	void exitNestedchoice2(SurveyGeneratorParser.Nestedchoice2Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link SurveyGeneratorParser#textentry}.
 	 * @param ctx the parse tree

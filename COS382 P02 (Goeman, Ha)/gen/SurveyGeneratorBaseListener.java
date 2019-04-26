@@ -135,6 +135,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterNestedchoice(SurveyGeneratorParser.NestedchoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNestedchoice(SurveyGeneratorParser.NestedchoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSingle(SurveyGeneratorParser.SingleContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -147,6 +159,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterRandomizer(SurveyGeneratorParser.RandomizerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitRandomizer(SurveyGeneratorParser.RandomizerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -154,6 +178,18 @@ public class SurveyGeneratorBaseListener implements SurveyGeneratorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSinglechoiceoption(SurveyGeneratorParser.SinglechoiceoptionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNestedchoice2(SurveyGeneratorParser.Nestedchoice2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNestedchoice2(SurveyGeneratorParser.Nestedchoice2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
