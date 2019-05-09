@@ -1,19 +1,17 @@
-!"titleofsurvey"
+!"title_of_survey"
 ~"optionalpagetitle"
 ?"question1title"
 multi["multipleoption1","multipleoption2","multipleoption3"]
 >"multipleoption1"
-	?"nestedquestiontitle"
+	?"textquestiontitle"
 	textentry[50]
 
-?"questiontitle2"
-single["singleoption1","singleoption2"]
->"singleoption1"
-	?"nestedquestion2title"
-	date[]
+?"question_title"
+single["single_option1","single_option2"]
+
 
 ?"qustiontitle3"
-multi["multipleoption11","multipleoption12"]
+multi["multipleoption1","multipleoption2"]
 
 ?"questiontitle4"
 number[]
@@ -27,5 +25,5 @@ upload[500|"image"]
 ?"questiontitle7"
 scale["highly dissatisfied"|"highly satisfied"]
 
-?"questiontitle8"
+?"What is your birthday?"
 date[]

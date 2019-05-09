@@ -27,7 +27,7 @@ minlabel : TEXT;
 maxlabel : TEXT;
 
 NL : ('\r')? '\n' ;
-TEXT    : '"' [ 0-9a-zA-Z!@#$%^&*():;'_]+ '"';
+TEXT    : '"' [ 0-9a-zA-Z!@#$%^&*():;'_?]+ '"';
 INTEGER : ('-')?[1-9](NUMBER)* | '0';
 RANDOMIZER : '%';
 

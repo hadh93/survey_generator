@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-<h1>titleofsurvey
+<h1>title_of_survey
 </h1>
 <br>
 <h2>
@@ -41,32 +41,27 @@ question1title
 <input type="checkbox" id ="multipleoption3">multipleoption3<br>
 <div class = "hidden" name = "multipleoption1" style="margin-left: 100px
 "><h3>
-nestedquestiontitle
+textquestiontitle
 </h3>
 <br>
 <form>
-<input type="text" class="form-control text-info" id="nestedquestiontitle" maxlength = "50"></form>
+<input type="text" class="form-control text-info" id="textquestiontitle" maxlength = "50"></form>
 </div></form>
 </div><div><h3>
-questiontitle2
+question_title
 </h3>
 <br>
 <form>
-<input type="radio" name ="questiontitle2" id ="singleoption1">singleoption1<br>
-<input type="radio" name ="questiontitle2" id ="singleoption2">singleoption2<br>
-<div class = "hidden" name = "singleoption1" style="margin-left: 100px
-"><h3>
-nestedquestion2title
-</h3>
-<br>
-<form><input type="date" name="nestedquestion2title"></form></div></form>
+<input type="radio" name ="question_title" id ="single_option1">single_option1<br>
+<input type="radio" name ="question_title" id ="single_option2">single_option2<br>
+</form>
 </div><div><h3>
 qustiontitle3
 </h3>
 <br>
 <form>
-<input type="checkbox" id ="multipleoption11">multipleoption11<br>
-<input type="checkbox" id ="multipleoption12">multipleoption12<br>
+<input type="checkbox" id ="multipleoption1">multipleoption1<br>
+<input type="checkbox" id ="multipleoption2">multipleoption2<br>
 </form>
 </div><div><h3>
 questiontitle4
@@ -98,10 +93,10 @@ questiontitle7
 </form>
 <br>
 </div><div><h3>
-questiontitle8
+What is your birthday?
 </h3>
 <br>
-<form><input type="date" name="questiontitle8"></form></div><br>
+<form><input type="date" name="What is your birthday?"></form></div><br>
 <script>
 
 var multipleoption1 = document.querySelector("input[id=multipleoption1]");
@@ -111,17 +106,6 @@ multipleoption1.addEventListener( 'change', function() {
         document.getElementsByName("multipleoption1")[0].classList.add("hidden");	
     } else {
        document.getElementsByName("multipleoption1")[0].classList.remove("hidden");
-    }
-});
-
-
-var singleoption1 = document.querySelector("input[id=singleoption1]");
-
-singleoption1.addEventListener( 'change', function() {
-    if(!this.checked) {
-        document.getElementsByName("singleoption1")[0].classList.add("hidden");	
-    } else {
-       document.getElementsByName("singleoption1")[0].classList.remove("hidden");
     }
 });
 </script>

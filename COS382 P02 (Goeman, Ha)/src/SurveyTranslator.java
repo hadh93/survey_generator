@@ -17,6 +17,7 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	private String minlabel, maxlabel;
 	private String nestedchoice;
 	private boolean isRandom;
+	private String[] randomArray;
 
 	private String dequote(String somestring){
 		return somestring.substring(1,somestring.length()-1);
@@ -174,6 +175,7 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 				ctx.getText() + ">" +
 				dequote(ctx.getText()) +
 				"<br>\n");
+
 	}
 
 	@Override
