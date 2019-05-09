@@ -6,6 +6,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import static java.lang.Integer.parseInt;
+
 public class SurveyTranslator implements SurveyGeneratorListener {
 	public StringBuilder stringbuilder;
 	public SurveyTranslator() {
@@ -200,11 +202,13 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void exitSingle(SurveyGeneratorParser.SingleContext ctx) {
+
 		stringbuilder.append("</form>\n");
 	}
 
 	@Override
 	public void enterRandomizer(SurveyGeneratorParser.RandomizerContext ctx) {
+
 		isRandom = true;
 	}
 
@@ -243,7 +247,7 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	@Override
 	public void enterTextentry(SurveyGeneratorParser.TextentryContext ctx) {
 		stringbuilder.append("<form>\n");
-		stringbuilder.append("<input type=\"text\" class=\"form-control text-info\" id=" +
+		stringbuilder.append("<textarea id=" +
 				qname +
 				" "
 		);
@@ -252,14 +256,31 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 	@Override
 	public void exitTextentry(SurveyGeneratorParser.TextentryContext ctx) {
 		stringbuilder.append(">");
-		stringbuilder.append("</form>\n");
+		stringbuilder.append("</textarea></form>\n");
 	}
 
 	@Override
 	public void enterMaxlength(SurveyGeneratorParser.MaxlengthContext ctx) {
 
-		stringbuilder.append("maxlength = \""+
-				ctx.getText()+
+		int val = parseInt(ctx.getText());
+		int row;
+		int col;
+		if (val < 80){
+			col = val;
+		}
+		else{
+			col = 80;
+		}
+		row = val/80;
+		if (row == 0){
+			row = 1;
+		}
+
+		stringbuilder.append("rows = \""+
+				row+
+				"\""+
+				"cols = \" "+
+				col+
 				"\""
 				);
 
@@ -288,7 +309,7 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterMinimum(SurveyGeneratorParser.MinimumContext ctx) {
-		min = Integer.parseInt(ctx.getText());
+		min = parseInt(ctx.getText());
 	}
 
 	@Override
@@ -298,7 +319,7 @@ public class SurveyTranslator implements SurveyGeneratorListener {
 
 	@Override
 	public void enterMaximum(SurveyGeneratorParser.MaximumContext ctx) {
-	max = Integer.parseInt(ctx.getText());
+	max = parseInt(ctx.getText());
 	}
 
 	@Override

@@ -8,7 +8,7 @@ qtype : multi | single | textentry | number | date | upload | scale ;
 question : '?' questiontitle (NL)+ qtype (NL)*;
 questiontitle : TEXT;
 subquestion : '\t?' questiontitle (NL '\t')+ qtype (NL)+;
-multi : 'multi' ('%')? '[' multiplechoiceoption (','multiplechoiceoption)+ ']' NL ('>' nestedchoice NL (subquestion)+ )?; // optional dependency
+multi : 'multi' (randomizer)? '[' multiplechoiceoption (','multiplechoiceoption)+ ']' NL ('>' nestedchoice NL (subquestion)+ )?; // optional dependency
 multiplechoiceoption : TEXT;
 nestedchoice : TEXT;
 single : 'single' (randomizer)? '[' singlechoiceoption (','singlechoiceoption)+ ']' NL ('>' nestedchoice2 NL (subquestion)+ )?; // optional dependency
@@ -20,9 +20,9 @@ maxlength : INTEGER;
 number : 'number[' (minimum'|'maximum)? ']' NL; // optional min/max value
 minimum : INTEGER;
 maximum : INTEGER;
-date : 'date[]' NL; // date method needs to be implemented when translating
-upload : 'upload['( INTEGER | TEXT | INTEGER'|'TEXT )? ']' NL; // integer: file size, text: file type -> also needs to be implemented when translating
-scale : 'scale[' minlabel '|' maxlabel ']' NL; // text tokens example : highly dissatisfied / highly satisfied
+date : 'date[]' NL;
+upload : 'upload[]' NL;
+scale : 'scale[' minlabel '|' maxlabel ']' NL; // example : highly dissatisfied / highly satisfied
 minlabel : TEXT;
 maxlabel : TEXT;
 

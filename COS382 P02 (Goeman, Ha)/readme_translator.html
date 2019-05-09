@@ -19,8 +19,8 @@ Did you receive help from your instructor?  Yes
 
 SurveyGenerator
 ================
-
-ANTLR-written survey generator language. In this project, we created a simple and easy-to-learn language that parses a survey description (.txt) and generate a survey file in HTML format.
+<br>
+**SurveyGenerator** is an ANTLR-written, Domain Specific Language(DSL) designed for creating surveys. In this project, we implemented a simple and easy-to-learn language that parses a survey description (.txt) and generate a survey file in HTML format.
 Various question formats are supported, including:
 
 - Multiple choice question
@@ -39,9 +39,13 @@ Syntax
 ================
 
 
-<big>Title of Survey</big>
+Below is the description of our question-creating commands syntax, each followed by appropriate examples.
 
-Survey title should be specified at the first line of the file, followed by '!'.
+-----
+<br>
+<big>To get started</big>
+
+*Survey title* should be specified at the first line of the file, followed by '!'.
 
 Following the format:
 
@@ -52,7 +56,7 @@ Following the format:
 
 
 
-'~' handles page title(for each page in survey), which is optional.
+'~' handles *page title*(for each page in survey), which is optional.
 
 
 Then you can type in questions following format:
@@ -72,8 +76,10 @@ Supported question types are:
 - *scale*
 - *upload*
 
------
-
+<br>
+<br>
+- - -
+<br>
 <big>Multiple choice question (multiple-answer)</big>
 
 A *multi* is a multiple choice question type with **multiple** answers.
@@ -89,6 +95,10 @@ generates,
 
 For multiple choice question with **single** answer, use *single* instead of *multi*.
 
+<br>
+<br>
+- - -
+<br>
 <big>Number</big>
 
 Number questions provide a number entry field with a spinner.  Bounds can optionally be specified.
@@ -98,22 +108,69 @@ number[80|100]
 ~~~~~~~
 ![](final03.jpg)
 
+<br>
+<br>
+- - -
+<br>
 <big>Text Entry</big>
+
 Text questions provide a text entry field and can optionally have a character limit enforced.
 
 ~~~~~~
-?"textquestiontitle"
-textentry[50]
+?"Where will college education bring you 10 years from now? (1000 words limit)"
+textentry[1000]
 ~~~~~~
 ![](final04.jpg)
 
+<br>
+<br>
+- - -
+<br>
 <big>Date</big>
+
 Date questions provide a standard HTML5 date entry field.
 ~~~~~
 ?"What is your birthday?"
 date[]
 ~~~~~
 
+![](final05.jpg)
+
+<br>
+<br>
+- - -
+<br>
+<big>File Upload</big>
+
+Creates a question field that allows user to submit files.
+~~~~~
+?"Please upload your portrait picture"
+upload[]
+~~~~~
+
+![](final06.jpg)
+
+<br>
+<br>
+- - -
+<br>
+<big>Scale</big>
+
+Generate a survey question that uses well-known Likert 5-point scale.
+Two parameters are needed - *comment for the minimum value* and *comment for maximum value*.
+<br>
+E.g.
+~~~~~
+?"How was the service quality?"
+scale["highly dissatisfied"|"highly satisfied"]
+~~~~~
+
+![](final07.jpg)
+
+<br>
+<br>
+-----
+<br>
 <big>Nested questions</big>
 
 Sometimes you might want to have certain questions only appear depending on previous answers.
@@ -133,7 +190,9 @@ becomes
 
 ![](final02.jpg)
 
-Screenshots
+
+
+Usage example
 ================
 ![](screenshot4.png)
 

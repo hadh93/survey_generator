@@ -36,6 +36,6 @@ WS=23
 'number['=13
 '|'=14
 'date[]'=15
-'upload['=16
+'upload[]'=16
 'scale['=17
 '%'=21

@@ -6,6 +6,9 @@ multi["multipleoption1","multipleoption2","multipleoption3"]
 	?"textquestiontitle"
 	textentry[50]
 
+?"Where will college education bring you 10 years from now? (1000 words limit)"
+textentry[1000]
+
 ?"question_title"
 single["single_option1","single_option2"]
 
@@ -19,10 +22,10 @@ number[]
 ?"questiontitle5"
 number[80|100]
 
-?"questiontitle6"
-upload[500|"image"]
+?"Please upload your portrait picture"
+upload[]
 
-?"questiontitle7"
+?"How was the service quality?"
 scale["highly dissatisfied"|"highly satisfied"]
 
 ?"What is your birthday?"
