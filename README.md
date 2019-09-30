@@ -20,7 +20,7 @@ Syntax
 
 Below is the description of our question-creating commands syntax, each followed by appropriate examples.
 
-================
+
 
 ### To get started
 
