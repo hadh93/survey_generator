@@ -22,7 +22,7 @@ Below is the description of our question-creating commands syntax, each followed
 
 -----
 <br>
-<big>To get started</big>
+###To get started
 
 *Survey title* should be specified at the first line of the file, followed by '!'.
 
@@ -59,7 +59,7 @@ Supported question types are:
 <br>
 - - -
 <br>
-<big>Multiple choice question (multiple-answer)</big>
+###Multiple choice question (multiple-answer)
 
 A *multi* is a multiple choice question type with **multiple** answers.
 For example:
@@ -78,7 +78,7 @@ For multiple choice question with **single** answer, use *single* instead of *mu
 <br>
 - - -
 <br>
-<big>Number</big>
+###Number
 
 Number questions provide a number entry field with a spinner.  Bounds can optionally be specified.
 ~~~~~~~
@@ -91,7 +91,7 @@ number[80|100]
 <br>
 - - -
 <br>
-<big>Text Entry</big>
+###Text Entry
 
 Text questions provide a text entry field and can optionally have a character limit enforced.
 
@@ -103,9 +103,9 @@ textentry[1000]
 
 <br>
 <br>
-- - -
+---
 <br>
-<big>Date</big>
+###Date
 
 Date questions provide a standard HTML5 date entry field.
 ~~~~~
@@ -119,7 +119,7 @@ date[]
 <br>
 - - -
 <br>
-<big>File Upload</big>
+###File Upload
 
 Creates a question field that allows user to submit files.
 ~~~~~
@@ -133,7 +133,7 @@ upload[]
 <br>
 - - -
 <br>
-<big>Scale</big>
+###Scale
 
 Generate a survey question that uses well-known Likert 5-point scale.
 Two parameters are needed - *comment for the minimum value* and *comment for maximum value*.
@@ -150,7 +150,7 @@ scale["highly dissatisfied"|"highly satisfied"]
 <br>
 -----
 <br>
-<big>Nested questions</big>
+###Nested questions
 
 Sometimes you might want to have certain questions only appear depending on previous answers.
 Nested questions are our solution to this.
