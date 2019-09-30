@@ -56,9 +56,9 @@ Supported question types are:
 - *upload*
 
 
-<br>
-================
-<br>
+
+
+
 
 ### Multiple choice question (multiple-answer)
 
@@ -77,7 +77,7 @@ For multiple choice question with **single** answer, use *single* instead of *mu
 
 
 
-================
+
 
 ### Number
 
@@ -105,7 +105,7 @@ textentry[1000]
 
 
 
-================
+
 
 ### Date
 
@@ -117,10 +117,11 @@ date[]
 
 ![](final05.jpg)
 
-<br>
-<br>
-- - -
-<br>
+
+
+
+
+
 ### File Upload
 
 Creates a question field that allows user to submit files.
@@ -131,10 +132,11 @@ upload[]
 
 ![](final06.jpg)
 
-<br>
-<br>
-================
-<br>
+
+
+
+
+
 ### Scale
 
 Generate a survey question that uses well-known Likert 5-point scale.
@@ -148,10 +150,10 @@ scale["highly dissatisfied"|"highly satisfied"]
 
 ![](final07.jpg)
 
-<br>
-<br>
-================
-<br>
+
+
+
+
 ### Nested questions
 
 Sometimes you might want to have certain questions only appear depending on previous answers.
