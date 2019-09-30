@@ -20,9 +20,9 @@ Syntax
 
 Below is the description of our question-creating commands syntax, each followed by appropriate examples.
 
------
-<br>
-###To get started
+================
+
+### To get started
 
 *Survey title* should be specified at the first line of the file, followed by '!'.
 
@@ -55,11 +55,11 @@ Supported question types are:
 - *scale*
 - *upload*
 
-<br>
-<br>
-- - -
-<br>
-###Multiple choice question (multiple-answer)
+
+
+================
+
+### Multiple choice question (multiple-answer)
 
 A *multi* is a multiple choice question type with **multiple** answers.
 For example:
@@ -74,11 +74,11 @@ generates,
 
 For multiple choice question with **single** answer, use *single* instead of *multi*.
 
-<br>
-<br>
-- - -
-<br>
-###Number
+
+
+================
+
+### Number
 
 Number questions provide a number entry field with a spinner.  Bounds can optionally be specified.
 ~~~~~~~
@@ -87,11 +87,11 @@ number[80|100]
 ~~~~~~~
 ![](final03.jpg)
 
-<br>
-<br>
-- - -
-<br>
-###Text Entry
+
+
+================
+
+### Text Entry
 
 Text questions provide a text entry field and can optionally have a character limit enforced.
 
@@ -101,11 +101,12 @@ textentry[1000]
 ~~~~~~
 ![](final04.jpg)
 
-<br>
-<br>
----
-<br>
-###Date
+
+
+
+================
+
+### Date
 
 Date questions provide a standard HTML5 date entry field.
 ~~~~~
@@ -119,7 +120,7 @@ date[]
 <br>
 - - -
 <br>
-###File Upload
+### File Upload
 
 Creates a question field that allows user to submit files.
 ~~~~~
@@ -131,9 +132,9 @@ upload[]
 
 <br>
 <br>
-- - -
+================
 <br>
-###Scale
+### Scale
 
 Generate a survey question that uses well-known Likert 5-point scale.
 Two parameters are needed - *comment for the minimum value* and *comment for maximum value*.
@@ -148,9 +149,9 @@ scale["highly dissatisfied"|"highly satisfied"]
 
 <br>
 <br>
------
+================
 <br>
-###Nested questions
+### Nested questions
 
 Sometimes you might want to have certain questions only appear depending on previous answers.
 Nested questions are our solution to this.
