@@ -70,7 +70,7 @@ multi["multiple_option1","multiple_option2","multiple_option3"]
 
 generates,
 
-![](COS382 P02 (Goeman, Ha)\final01.jpg)
+![](COS382_P02_(Goeman,_Ha)\final01.jpg)
 
 For multiple choice question with **single** answer, use *single* instead of *multi*.
 
