@@ -71,7 +71,7 @@ multi["multiple_option1","multiple_option2","multiple_option3"]
 
 generates,
 
-![](final01.jpg)
+![](/images/final01.jpg)
 
 For multiple choice question with **single** answer, use *single* instead of *multi*.
 
@@ -86,7 +86,7 @@ Number questions provide a number entry field with a spinner.  Bounds can option
 ?"questiontitle5"
 number[80|100]
 ~~~~~~~
-![](final03.jpg)
+![](/images/final03.jpg)
 
 
 
@@ -100,7 +100,7 @@ Text questions provide a text entry field and can optionally have a character li
 ?"Where will college education bring you 10 years from now? (1000 words limit)"
 textentry[1000]
 ~~~~~~
-![](final04.jpg)
+![](/images/final04.jpg)
 
 
 
@@ -115,7 +115,7 @@ Date questions provide a standard HTML5 date entry field.
 date[]
 ~~~~~
 
-![](final05.jpg)
+![](/images/final05.jpg)
 
 
 
@@ -130,7 +130,7 @@ Creates a question field that allows user to submit files.
 upload[]
 ~~~~~
 
-![](final06.jpg)
+![](/images/final06.jpg)
 
 
 
@@ -148,7 +148,7 @@ E.g.
 scale["highly dissatisfied"|"highly satisfied"]
 ~~~~~
 
-![](final07.jpg)
+![](/images/final07.jpg)
 
 
 
@@ -171,12 +171,12 @@ multi["multipleoption1","multipleoption2","multipleoption3"]
 
 becomes
 
-![](final02.jpg)
+![](/images/final02.jpg)
 
 
 
 Usage example
 ================
-![](final08.png)
+![](/images/final08.png)
 
-![](final09.png)
+![](/images/final09.png)
