@@ -1,4 +1,9 @@
-# COS382_Survey_Generator
+# Survey_Generator
+
+### 🛠 Used Tech Stacks 🛠
+>   <img src = "https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white">
+
+
 **SurveyGenerator** is an ANTLR-written, Domain Specific Language(DSL) designed for creating surveys. In this project, we implemented a simple and easy-to-learn language that parses a survey description (.txt) and generate a survey file in HTML format.
 Various question formats are supported, including:
 
